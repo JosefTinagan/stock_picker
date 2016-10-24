@@ -14,7 +14,7 @@ class StockPicker
 					y += 1
 				end
 			end	
-			x += 1
+		x += 1
 		end
 		
 		best_stock = array_of_results.max
@@ -22,19 +22,19 @@ class StockPicker
 		
 		while z < arr.length
 			v = 0
-				while v < arr.length	
-					if(arr[v] == arr[z])
-						v += 1
-					else
-						temp = arr[v] - arr[z]
-						if (temp == best_stock)
-							buy_day, sell_day = z,v
-							v = arr.length #exits loop, get the earliest day profit
-						end
-						v += 1
+			while v < arr.length	
+				if(arr[v] == arr[z])
+					v += 1
+				else
+					temp = arr[v] - arr[z]
+					if (temp == best_stock)
+						buy_day, sell_day = z,v
+						v = arr.length #exits loop, get the earliest day profit
 					end
+					v += 1
 				end
-			z += 1
+			end
+		z += 1
 		end
 		return buy_day, sell_day
 
